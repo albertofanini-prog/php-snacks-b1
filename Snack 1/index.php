@@ -106,7 +106,8 @@
         </h1>
         <ul>
             <?php
-                for ($i = 0; $i < count($partite); ++$i){
+                for ($i = 0; $i < count($partite); ++
+                $i){
                     ?>
                         <li>
                             <?php echo $partite[$i]['casa']?>
