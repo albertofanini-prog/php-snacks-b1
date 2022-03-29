@@ -12,18 +12,21 @@
     //var_dump('Snack 2');
 
     $name = $_GET['name'];
+    $is_long = strlen($name);
 
     $mail = $_GET['mail'];
     $has_dot = strpos($mail,'.');
     $has_at = strpos($mail,'@');
 
     $age = $_GET['age'];
+    $is_number = is_numeric($age);
 
-    var_dump($name);
-    var_dump($mail);
+    //var_dump($name);
+    //var_dump($mail);
+    //var_dump($age);
+    //var_dump($is_long);
     //var_dump($has_dot);
     //var_dump($has_at);
-    var_dump($age);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,16 +39,46 @@
 <body>
     <div>
         <?php
+            if($is_long >= 3){
+                ?>
+                <div>
+                    Il tuo username ha almeno 3 caratteri, è valido.
+                </div>
+                <?php
+            } else {
+                ?>
+                <div>
+                    Il tuo username non ha almeno 3 caratteri, non è valido.
+                </div>
+                <?php
+            }
+        ?>
+        <?php
             if($has_dot && $has_at){
                 ?>
                     <div>
-                        E-mail valida
+                        La tua e-mail contiene una chiocciola e un punto, è valida. 
                     </div>
                 <?php
             } else {
                 ?>
                     <div>
-                        E-mail non valida
+                        La tua e-mail non contiene una chiocciola e un punto, non è valida. 
+                    </div>
+                <?php
+            }
+        ?>
+        <?php
+            if($is_number = true){
+                ?>
+                    <div>
+                        L'età da te inserita ha un formato corretto, è valida.
+                    </div>
+                <?php
+            } else{
+                ?>
+                    <div>
+                        L'età da te inserita non ha un formato corretto, non è valida.
                     </div>
                 <?php
             }
