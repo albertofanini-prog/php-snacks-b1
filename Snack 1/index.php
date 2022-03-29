@@ -60,3 +60,67 @@
         ],
     ]
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 80%;
+            height: 75%;
+            padding: 30px;
+        }
+        h1{
+            font-size: 36px;
+        }
+        ul{
+            list-style: none;
+            font-size: 24px;
+        }
+        li{
+            padding-top: 20px;
+        }
+    </style>
+    <title>Snack 1</title>
+</head>
+<body>
+    <div class="box">
+        <h1>
+            Risultati del Turno 24 di Serie A Basket:   
+        </h1>
+        <ul>
+            <?php
+                for ($i = 0; $i < count($partite); ++$i){
+                    ?>
+                        <li>
+                            <?php echo $partite[$i]['casa']?>
+                            -
+                            <?php echo $partite[$i]['ospite']?>
+                            |
+                            <?php echo $partite[$i]['punti_casa']?>
+                            -
+                            <?php echo $partite[$i]['punti_ospite']?>
+                        </li>
+                    <?php
+                }
+            ?>
+        </ul>
+    </div>
+</body>
+</html>
