@@ -87,7 +87,7 @@
             padding: 30px;
         }
         h1{
-            font-size: 36px;
+            font-size: 38px;
         }
         ul{
             list-style: none;
