@@ -55,35 +55,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 3</title>
+    <style>
+        body, .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .block-notes{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 80%;
+            list-style: none;
+        }
+        .post-it{
+            width:300px;
+            background-color:yellow;
+            box-shadow: 10px 10px 5px #888888; 
+            text-align: center; 
+            border: 10px;
+            padding: 10px;
+            border-radius: 15px
+        }
+        .key{
+            color: red;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .title{
+            color: blue;
+            font-size: 24px;
+        }
+        .author{
+            color: green;
+            font-size: 22px;
+        }
+        .text{
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <ul>
+    <div class="container">
+        <ul class="block-notes">
             <?php
             foreach ($posts as $key => $value){
                 ?>
-                <li>
+                <li class="post-it">
+                    <p class="key">
                     <?php
                         echo $key
                     ?>
+                    </p>
                     <?php
                         for ( $i = 0; $i < count($posts[$key]); ++$i){
                             ?>
-                            <p>
+                            <p class="title">
                                 <?php
                                     echo $posts[$key][$i]['title']
                                 ?>                                            
                             </p>
                             <?php
                             ?>
-                            <p>
+                            <p class="author">
                                 <?php
                                     echo $posts[$key][$i]['author']
                                 ?>                                    
                             </p>
                             <?php
                             ?>
-                            <p>
+                            <p class="text">
                                 <?php
                                     echo $posts[$key][$i]['text']
                                 ?>                                                                
